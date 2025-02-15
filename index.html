@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <figure>
+
+    <figure class="todo__image">
         <img src="./eisenhower-matrix.jpg" alt="Eisenhower Matrix">
-        <figcaption><a class="more_inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more
-                details&quest;</a></figcaption>
+        <figcaption>
+            <a class="todo__more-info" href="https://goal-life.com/page/method/matrix-eisenhower" target="_blank"
+                rel="noopener noreferrer">Want more details&quest;</a>
+        </figcaption>
     </figure>
 
-    <main>
-        <section id="task-entry">
-            <label for="new-task">Add Item</label>
-            <fieldset>
-                <input id="new-task" class="task" type="text">
-                <button>Add</button>
+    <main class="todo">
+        <section id="task-entry" class="todo__section">
+            <label for="new-task" class="todo__label">Add Item</label>
+            <fieldset class="todo__input-group">
+                <input id="new-task" class="todo__input" type="text" aria-label="Enter a new task">
+                <button class="todo__button">Add</button>
             </fieldset>
         </section>
 
-        <section>
-            <h2>Todo</h2>
-            <ul id="incompleteTasks">
-                <li>
-                    <input type="checkbox">
-                    <label class="task">Pay Bills</label>
-                    <input type="text" class="task">
-                    <button class="edit">Edit</button>
-                    <button class="delete"><img src="./remove.svg" alt="Remove Task"></button>
-                </li>
-                <li class="editMode">
-                    <input type="checkbox">
-                    <label class="task">Go Shopping</label>
-                    <input type="text" value="Go Shopping" class="task">
-                    <button class="edit">Save</button>
-                    <button class="delete"><img src="./remove.svg" alt="Remove Task"></button>
+        <section class="todo__section">
+            <h2 class="todo__title">Todo</h2>
+            <ul id="incompleteTasks" class="todo__list">
+                <li class="todo__item">
+                    <input type="checkbox" class="todo__checkbox" aria-label="Mark Pay Bills as completed">
+                    <label class="todo__task">Pay Bills</label>
+                    <input type="text" class="todo__edit-input">
+                    <button class="todo__button todo__button--edit">Edit</button>
+                    <button class="todo__button todo__button--delete" aria-label="Remove Pay Bills">
+                        <img src="./remove.svg" alt="Remove Task">
+                    </button>
                 </li>
             </ul>
         </section>
 
-        <section>
-            <h2>Completed</h2>
-            <ul id="completed-tasks">
-                <li>
-                    <input type="checkbox" checked>
-                    <label class="task">See the Doctor</label>
-                    <input type="text" class="task">
-                    <button class="edit">Edit</button>
-                    <button class="delete"><img src="./remove.svg" alt="Remove Task"></button>
+        <section class="todo__section">
+            <h2 class="todo__title">Completed</h2>
+            <ul id="completed-tasks" class="todo__list">
+                <li class="todo__item">
+                    <input type="checkbox" class="todo__checkbox" checked
+                        aria-label="Mark See the Doctor as incomplete">
+                    <label class="todo__task">See the Doctor</label>
+                    <input type="text" class="todo__edit-input">
+                    <button class="todo__button todo__button--edit">Edit</button>
+                    <button class="todo__button todo__button--delete" aria-label="Remove See the Doctor">
+                        <img src="./remove.svg" alt="Remove Task">
+                    </button>
                 </li>
             </ul>
         </section>
     </main>
 
-    <script type="text/javascript" src="app.js"></script>
+    <script src="app.js"></script>
+
 </body>
 
 </html>
